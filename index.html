@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes bgAnimate {
+            0% {
+                background: linear-gradient(0deg, #FF64AF, #E0004E);
+            }
+            25% {
+                background: linear-gradient(90deg, #FF64AF, #E0004E);
+            }
+            70% {
+                background: linear-gradient(180deg, #FF64AF, #E0004E);
+            }
+            100% {
+                background: linear-gradient(270deg, #FF64AF, #E0004E);
+            }
+        }
+
+        @keyframes invert {
+            0% {
+                filter: invert(1);
+            }
+            100% {
+                filter: invert(0);
+
+            }
+        }
+.invert-on-hold * {
+  animation: invert 0.0001s linear infinite alternate-reverse;
+}
+        body {
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(to right, #FF64AF, #E0004E);
+            overflow: hidden;
+            /* animation: bgAnimate 0.0001s linear infinite alternate-reverse; */
+        }
+
+        .full {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+
+        }
+
+        
+
+        @keyframes floatInFromBottom {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0vh);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatInFromTop {
+            0% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0vh);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatInFromLeft {
+            0% {
+                transform: translateX(-100vh);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0vh);
+                opacity: 1;
+            }
+        }
+
+        .float {
+            animation: floatInFromBottom 1s ease-out forwards;
+        }
+        .float_top{
+
+            animation: floatInFromTop 1s ease-out forwards;
+        }
+        .float_bottom{
+
+            animation: floatInFromBottom 1s ease-out forwards;
+        }
+
+        
+        .float_left{
+
+            animation: floatInFromLeft 1s ease-out forwards;
+        }
+
+        
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+
+        .delay-5 {
+            animation-delay: 1s;
+        }
+        .delay-6 {
+            animation-delay: 1.4s;
+        }
+
+        .layer0_lasso {
+            background-image: url(layer1_lasso.png);
+        }
+
+        .rotate-clockwise {
+            animation: rotateClockwise 3s linear infinite; /* Infinite clockwise rotation */
+            animation-delay: 1s; /* Starts after the float-in animation */
+        }
+
+
+
+
+        .catto:hover {
+            /* animation: floatInFromTop  3s linear infinite; Infinite clockwise rotation */
+                transform: translateY(-10vh);
+
+
+        }
+
+        @keyframes rotateClockwise {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cards:hover{
+            transition: .1s ease-in-out;
+            transform: scale(1.4);
+            box-shadow: 0px 0px 50px pink;
+            scale: 1.2;
+
+            border-radius: 2vh;
+
+
+        }
+        .cards:active{
+            box-shadow: 0px 0px 50px deeppink;
+        }
+        @media screen and (max-width: 768px) {
+          .pcView {
+            display: none;
+          }
+
+         .mobileView div{
+            height: 100vh;
+            width: 100vw;
+            opacity: 0;
+
+         }
+         .mobileLayer0 {
+            background-image: url(mobile_layer0.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+         .mobileLayer01 {
+            background-image: url(mobile_layer01.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+         .mobileLayer02 {
+            background-image: url(mobile_layer02.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+         .mobileLayer10 {
+            background-image: url(mobile_layer10.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+         .mobileLayer11 {
+            background-image: url(mobile_layer11.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+         .mobileLayer20 {
+            background-image: url(mobile_layer20.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+         .mobileLayer21 {
+            background-image: url(mobile_layer21.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+         .mobileLayer22 {
+            background-image: url(mobile_layer22.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+         .mobileLayer30 {
+            background-image: url(mobile_contact.png);
+            background-size: cover;
+            position: absolute;
+            height: 6vh !important;
+            width: 6vh !important;
+            top: 80%;
+            left: 5%;
+            opacity: 1;
+        }
+         .mobileLayer31 {
+            background-image: url(mobile_about.png);
+            background-size: cover;
+            position: absolute;
+            height: 6vh !important;
+            width: 6vh !important;
+            top: 72%;
+            left: 5%;
+            opacity: 1;
+        }
+         .mobileLayer32 {
+            background-image: url(mobile_proj.png);
+            background-size: cover;
+            position: absolute;
+            height: 6vh !important;
+            width: 6vh !important;
+            top: 64%;
+            left: 5%;
+            opacity: 1;
+        }
+        .btn_mobile {
+            
+        }
+        .btn_mobile:hover {
+            transition: .1s ease-in-out;
+            transform: scale(1.4);
+            box-shadow: 0px 0px 50px pink;
+            scale: 1.2;
+
+            border-radius: 2vh;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="pcView">
+
+    <img id="layer0_top_left" class="full float_left" src="layer0_top_left.png" alt=""> <!-- float in from left -->
+    <img class="full float delay-1" src="layer1_lasso.png" alt=""> <!-- float in from bottom -->
+    <img class="full float delay-2" src="layer1_algae.png" alt=""> <!-- float in from bottom -->
+    <img class="full float_bottom delay-3" src="sohamMain (2).png" alt=""> <!-- float in from bottom -->
+    <img class="full float_top delay-4" src="layer2_right_lasso_black.png" alt=""> <!-- float in from bottom with slight delay 1 -->
+    <img class="full float_top delay-5" src="layer2_right_lasso_pink.png" alt=""> <!-- float in from bottom with slight delay 2 -->
+    <img class="full float_top delay-1" src="layer2_left_0.png" alt=""> <!-- float in from bottom -->
+    <img class="full float_top delay-2" src="layer2_left_1.png" alt=""> <!-- float in from bottom with slight delay 1 -->
+    <!-- <img class="full float delay-3" src="layer2_left_desc.png" alt=""> float in from bottom with slight delay 2 -->
+     <a href="https://sohamkore.github.io/Projects" target="_blank">
+        <img class="cards float_top delay-3" style="position: absolute;top: 60%;left: 15%;opacity: 0;height: 20vh;" src="layer2_left_projects.png" alt=""> <!-- float in from bottom with slight delay 3 -->
+     </a>
+     <a href="https://sohamkore.github.io" target="_blank">
+        <img class="cards float_top delay-4" style="position: absolute;top: 60%;left: 26%;opacity: 0;height: 20vh;" src="layer2_left_aboutme.png" alt=""> <!-- float in from bottom with slight delay 4 -->
+     </a>
+    <a href="https://github.com/SohamKore" target="_blank">
+        <img class="cards float_top delay-5" style="position: absolute;top: 60%;left: 37%;opacity: 0;height: 20vh;" src="layer2_left_contact.png" alt=""> <!-- float in from bottom with slight delay 5 -->
+    </a>
+
+    <img class=" float_top delay-6 catto" style="position: absolute;top: 60%;left: 85%;opacity: 0;height: 20vh;" src="cato.gif" alt=""> <!-- float in from bottom with slight delay 5 -->
+    </div>
+    <div class="mobileView">
+        <div class="mobileLayer0  float_top "></div>
+        <div class="mobileLayer01   float "></div>
+        <div class="mobileLayer02   float delay-1"></div>
+        <div class="mobileLayer10   float_top delay-1"></div>
+        <div class="mobileLayer11   float_top delay-2"></div>
+        <div class="mobileLayer20   float delay-4"></div>
+        <div class="mobileLayer21   float_top delay-5"></div>
+        <div class="mobileLayer22   float_bottom delay-5"></div>
+        <div class="btn_mobile mobileLayer30   float_left delay-4"></div>
+        <div class="btn_mobile mobileLayer31   float_left delay-5"></div>
+        <div class="btn_mobile mobileLayer32   float_left delay-6"></div>
+    </div>
+
+<script>
+
+
+let isXPressed = false;
+let styleElement = null;
+
+document.addEventListener('keydown', function(e) {
+  if (e.key.toLowerCase() === 'x' && !isXPressed) {
+    isXPressed = true;
+
+    styleElement = document.createElement('style');
+    styleElement.innerHTML = `
+      @keyframes invert {
+        0% { filter: invert(0) hue-rotate(0deg) saturate(1); transform: scale(1) rotate(0deg); }
+        25% { filter: invert(1) hue-rotate(90deg) saturate(3); transform: scale(1.03) rotate(2deg); }
+        50% { filter: invert(0.5) hue-rotate(180deg) saturate(2); transform: scale(0.97) rotate(-2deg); }
+        75% { filter: invert(1) hue-rotate(270deg) saturate(4); transform: scale(1.05) rotate(1deg); }
+        100% { filter: invert(0) hue-rotate(360deg) saturate(1); transform: scale(1) rotate(0deg); }
+      }
+
+      * {
+        animation: invert 0.2s infinite alternate ease-in-out !important;
+        transition: all 0.05s ease;
+      }
+    `;
+    document.head.appendChild(styleElement);
+  }
+});
+
+document.addEventListener('keyup', function(e) {
+  if (e.key.toLowerCase() === 'x') {
+    isXPressed = false;
+    if (styleElement) {
+      styleElement.remove();
+      styleElement = null;
+    }
+  }
+});
+</script>
+
+</body>
+
+</html>
